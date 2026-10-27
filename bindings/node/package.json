@@ -1,0 +1,16 @@
+{
+  "name": "alldocs",
+  "version": "0.1.0",
+  "description": "Fast local conversion of Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV and PDF files to GitHub Flavored Markdown",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "license": "MIT OR Apache-2.0",
+  "files": ["index.js", "index.d.ts", "alldocs.node"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node build.js",
+    "build:debug": "node build.js --debug",
+    "test": "node --test"
+  },
+  "keywords": ["markdown", "docx", "pptx", "xlsx", "pdf", "epub", "rtf", "odt", "converter"]
+}

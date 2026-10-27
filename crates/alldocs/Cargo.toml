@@ -1,0 +1,26 @@
+[package]
+name = "alldocs"
+description = "Fast local conversion of Office, OpenDocument, RTF, EPUB, CSV and PDF files to GitHub Flavored Markdown"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[features]
+default = ["pdf"]
+# Text-based PDF support (pure Rust, via pdf_oxide).
+pdf = ["dep:pdf_oxide"]
+# Serialize results (used by the CLI's --json output).
+serde = ["dep:serde"]
+
+[dependencies]
+zip = { version = "9.1", default-features = false, features = ["deflate"] }
+quick-xml = { version = "0.42", features = ["escape-html"] }
+memchr = "2"
+calamine = { version = "0.37", features = ["dates", "picture"] }
+csv = "1.4"
+encoding_rs = "0.8"
+unicode-width = "0.2"
+thiserror = "2"
+pdf_oxide = { version = "0.3.78", default-features = false, features = ["legacy-crypto"], optional = true }
+serde = { version = "1", features = ["derive"], optional = true }

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["maturin>=1.8,<2"]
+build-backend = "maturin"
+
+[project]
+name = "alldocs"
+version = "0.1.0"
+description = "Fast local conversion of Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV and PDF files to GitHub Flavored Markdown"
+requires-python = ">=3.9"
+license = { text = "MIT OR Apache-2.0" }
+keywords = ["markdown", "docx", "pptx", "xlsx", "pdf", "epub", "rtf", "odt", "converter"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+
+[project.scripts]
+alldocs-py = "alldocs.__main__:main"
+
+[tool.maturin]
+python-source = "python"
+module-name = "alldocs._alldocs"
+features = ["pyo3/extension-module"]

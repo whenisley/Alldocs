@@ -1,0 +1,5 @@
+# Windows GNU toolchain: link with Rust's bundled MinGW linker (an external
+# gcc installed under a path containing spaces breaks), while `dlltool`/`as`
+# come from a MinGW-w64 install on PATH. MSVC and other targets are unaffected.
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "link-self-contained=yes"]

@@ -1,0 +1,32 @@
+# Rust build output
+/target/
+
+# Compiled bindings (rebuild with `npm run build` / `maturin develop`)
+*.node
+*.pyd
+*.so
+*.dylib
+*.dll
+*.whl
+bindings/node/node_modules/
+bindings/python/dist/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Benchmark/test outputs
+*_media/
+
+# Local-only files
+DIARIO_DE_CONTEXTO.md
+GERAL.txt
+.claude/settings.local.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
